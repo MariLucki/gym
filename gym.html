@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Iron District Fitness — a gym website concept for Parklands, Cape Town.">
+<title>IRON DISTRICT | Fitness & Performance</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy: #071521;
+  --panel: #0d202e;
+  --blue: #39c8f5;
+  --ice: #bceeff;
+  --white: #f5fbff;
+  --grey: #a8bdca;
+  --border: #1b4054;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--navy);
+  color: var(--white);
+  font-family: 'Montserrat', Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1120px, 90%);
+  margin: auto;
+}
+
+header {
+  background: rgba(7, 21, 33, .97);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 29px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.logo span,
+h1 span,
+h2 span {
+  color: var(--blue);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover {
+  color: var(--blue);
+}
+
+.nav-cta {
+  border: 1px solid var(--blue);
+  padding: 9px 13px;
+  color: var(--blue);
+}
+
+.hero {
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(4, 16, 26, .96), rgba(4, 16, 26, .72), rgba(4, 16, 26, .28)),
+    url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=85')
+    center / cover no-repeat;
+}
+
+.hero-content {
+  padding: 75px 0;
+  max-width: 690px;
+}
+
+.eyebrow {
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 17px;
+}
+
+h1, h2, h3 {
+  font-family: 'Barlow Condensed', Impact, sans-serif;
+  text-transform: uppercase;
+  line-height: 1.05;
+}
+
+h1 {
+  font-size: clamp(57px, 11vw, 100px);
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+
+.tagline {
+  letter-spacing: 4px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  color: #d1e0e9;
+  max-width: 480px;
+  font-size: 14px;
+  margin-bottom: 27px;
+}
+
+.button {
+  display: inline-block;
+  background: var(--blue);
+  color: #04131e;
+  border: 1px solid var(--blue);
+  padding: 13px 20px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: .2s;
+}
+
+.button:hover {
+  background: var(--ice);
+  border-color: var(--ice);
+}
+
+.button-outline {
+  background: transparent;
+  color: var(--white);
+  border-color: var(--blue);
+  margin-left: 8px;
+}
+
+.button-outline:hover {
+  color: var(--navy);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: #091b29;
+}
+
+.stat {
+  text-align: center;
+  padding: 23px 10px;
+  border-right: 1px solid var(--border);
+}
+
+.stat:last-child {
+  border-right: none;
+}
+
+.stat strong {
+  display: block;
+  color: var(--blue);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 26px;
+}
+
+.stat span {
+  font-size: 10px;
+  color: var(--grey);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+section {
+  padding: 75px 0;
+  scroll-margin-top: 85px;
+}
+
+.section-heading {
+  margin-bottom: 32px;
+}
+
+.section-heading h2 {
+  font-size: clamp(37px, 7vw, 55px);
+  margin-bottom: 12px;
+}
+
+.section-heading p {
+  color: var(--grey);
+  font-size: 13px;
+  max-width: 570px;
+}
+
+.programs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.program-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: .2s;
+}
+
+.program-card:hover {
+  border-color: var(--blue);
+  transform: translateY(-4px);
+}
+
+.program-image {
+  height: 185px;
+  background-position: center;
+  background-size: cover;
+}
+
+.strength {
+  background-image: url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=800&q=80');
+}
+
+.conditioning {
+  background-image: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80');
+}
+
+.personal {
+  background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80');
+}
+
+.program-info {
+  padding: 22px;
+}
+
+.program-info h3 {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.program-info p {
+  color: var(--grey);
+  font-size: 12px;
+}
+
+.about {
+  background: #0a1c29;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-image {
+  min-height: 320px;
+  background:
+    linear-gradient(0deg, rgba(5, 20, 32, .12), rgba(5, 20, 32, .12)),
+    url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=80')
+    center / cover;
+}
+
+.about-copy h2 {
+  font-size: clamp(38px, 6vw, 55px);
+  margin-bottom: 17px;
+}
+
+.about-copy p {
+  color: var(--grey);
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.features {
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+.features li {
+  margin: 9px 0;
+  font-size: 12px;
+}
+
+.features li::before {
+  content: '✓';
+  color: var(--blue);
+  font-weight: 900;
+  margin-right: 10px;
+}
+
+.membership-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.membership-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 25px 20px;
+}
+
+.membership-card.featured {
+  border-color: var(--blue);
+  box-shadow: 0 0 20px rgba(57, 200, 245, .08);
+}
+
+.membership-card h3 {
+  font-size: 27px;
+  margin-bottom: 10px;
+}
+
+.price {
+  color: var(--blue);
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.per-month {
+  color: var(--grey);
+  font-size: 11px;
+  margin-bottom: 18px;
+}
+
+.membership-card p {
+  color: var(--grey);
+  font-size: 12px;
+  margin-bottom: 18px;
+}
+
+.membership-card .button {
+  display: block;
+  text-align: center;
+}
+
+.contact {
+  text-align: center;
+  background: linear-gradient(135deg, #102e42, #071521 70%);
+  border-top: 1px solid var(--border);
+}
+
+.contact h2 {
+  font-size: clamp(40px, 8vw, 65px);
+  margin-bottom: 15px;
+}
+
+.contact p {
+  color: var(--grey);
+  max-width: 520px;
+  font-size: 13px;
+  margin: 0 auto 25px;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--grey);
+  font-size: 11px;
+  padding: 25px 0;
+}
+
+footer span {
+  color: var(--blue);
+}
+
+@media (max-width: 760px) {nav {
+  flex-direction: column;
+  justify-content: center;
+  padding: 8px 0;
+  gap: 6px;
+}
+  nav {
+    flex-direction: column;
+    justify-content: center;
+    padding: 14px 0;
+    gap: 12px;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 13px;
+    font-size: 10px;
+  }
+
+  .hero {
+    min-height: 500px;
+    background-position: 58% center;
+  }
+
+  .hero-content {
+    padding: 60px 0;
+  }
+
+  .programs,
+  .membership-grid,
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .program-image {
+    height: 220px;
+  }
+
+  .about-image {
+    min-height: 250px;
+  }
+
+  section {
+    padding: 55px 0;
+  }
+}
+
+@media (max-width: 390px) {
+  .nav-links {
+    gap: 9px;
+  }
+
+  .button-outline {
+    margin: 8px 0 0;
+  }
+
+  .stat span {
+    font-size: 8px;
+  }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <nav class="container">
+    <a href="#home" class="logo">IRON <span>DISTRICT.</span></a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#programs">Training</a>
+      <a href="#about">About</a>
+      <a href="#membership">Plans</a>
+      <a href="#contact" class="nav-cta">Join Now</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <div class="eyebrow">Parklands · Cape Town</div>
+      <h1>IRON<br><span>DISTRICT.</span></h1>
+      <div class="tagline">BUILD. TRAIN. IMPROVE.</div>
+      <p>More than just a gym. A place to build strength, improve your fitness and work towards becoming your strongest self.</p>
+      <a class="button" href="#membership">Join the District →</a>
+      <a class="button button-outline" href="#programs">Our Programmes</a>
+    </div>
+  </section>
+
+  <div class="stats">
+    <div class="stat">
+      <strong>STRENGTH</strong>
+      <span>Train with purpose</span>
+    </div>
+    <div class="stat">
+      <strong>PARKLANDS</strong>
+      <span>Cape Town concept</span>
+    </div>
+    <div class="stat">
+      <strong>YOUR GOALS</strong>
+      <span>Your progress</span>
+    </div>
+  </div>
+
+  <section id="programs">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Find Your Focus</div>
+        <h2>TRAIN YOUR <span>WAY.</span></h2>
+        <p>Choose a training style that suits your goals. Start where you are and keep improving.</p>
+      </div>
+
+      <div class="programs">
+        <article class="program-card">
+          <div class="program-image strength"></div>
+          <div class="program-info">
+            <h3>Strength</h3>
+            <p>Build muscle, improve your technique and get stronger over time.</p>
+          </div>
+        </article>
+
+        <article class="program-card">
+          <div class="program-image conditioning"></div>
+          <div class="program-info">
+            <h3>Conditioning</h3>
+            <p>Work on endurance, movement and overall fitness.</p>
+          </div>
+        </article>
+
+        <article class="program-card">
+          <div class="program-image personal"></div>
+          <div class="program-info">
+            <h3>Personal Training</h3>
+            <p>Get guidance and a training approach tailored to your goals.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-image" role="img" aria-label="Gym equipment and training space"></div>
+      <div class="about-copy">
+        <div class="eyebrow">About Iron District</div>
+        <h2>YOUR GOALS.<br><span>OUR MISSION.</span></h2>
+        <p>IRON DISTRICT is a fictional gym concept designed for Parklands, Cape Town. The idea is simple: create a welcoming training space where people can work towards their personal fitness goals.</p>
+        <ul class="features">
+          <li>Strength and fitness training</li>
+          <li>A motivating training environment</li>
+          <li>Progress at your own pace</li>
+        </ul>
+        <a class="button" href="#contact">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="membership">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Membership Options</div>
+        <h2>CHOOSE YOUR <span>PLAN.</span></h2>
+        <p>Example prices for this practice website. Actual prices and membership terms would need to be confirmed by a real gym.</p>
+      </div>
+
+      <div class="membership-grid">
+        <article class="membership-card">
+          <h3>Basic</h3>
+          <div class="price">R399</div>
+          <div class="per-month">PER MONTH · EXAMPLE</div>
+          <p>A simple starting point for your fitness journey.</p>
+          <a class="button button-outline" href="#contact">Enquire Now</a>
+        </article>
+
+        <article class="membership-card featured">
+          <h3>Standard</h3>
+          <div class="price">R549</div>
+          <div class="per-month">PER MONTH · EXAMPLE</div>
+          <p>More flexibility for your regular training routine.</p>
+          <a class="button" href="#contact">Enquire Now</a>
+        </article>
+
+        <article class="membership-card">
+          <h3>Premium</h3>
+          <div class="price">R749</div>
+          <div class="per-month">PER MONTH · EXAMPLE</div>
+          <p>An example package for members wanting extra support.</p>
+          <a class="button button-outline" href="#contact">Enquire Now</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="eyebrow">Your Next Chapter Starts Here</div>
+      <h2>READY TO <span>GET STRONGER?</span></h2>
+      <p>This is a demonstration website. Contact details and a real membership enquiry service can be added when a gym owner approves the content.</p>
+      <a class="button" href="mailto:hello@example.com?subject=Iron%20District%2
+        class="button"
+   href="https://wa.me/27821234567?text=Hi%20Iron%20District!%20I%27d%20like%20to%20ask%20about%20membership."
+   target="_blank"
+   rel="noopener noreferrer">
+   WhatsApp Us
+</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 <span>IRON DISTRICT.</span> Website design practice project.</p>
+  </div>
+</footer>
+</body>
+</html>
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Hello, World!</title>
+</head>
+<body>
+  <h1>
+    Hello, World!
+  </h1>
+</body>
+</html>
